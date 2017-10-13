@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "flow",
+    [
+      "env",
+      {
+        "useBuiltIns": true,
+        "targets": {
+          "node": "6"
+        }
+      }
+    ]
+  ]
+}

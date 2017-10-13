@@ -1,0 +1,20 @@
+{
+  "name": "go-reverse",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "go"
+    ],
+    "runner": "<rootDir>/../build",
+    "testMatch": [
+      "**/?(*_)test.go"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}

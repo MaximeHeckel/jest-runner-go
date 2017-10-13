@@ -1,0 +1,12 @@
+{
+	"parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "class-methods-use-this": 0,
+    "no-underscore-dangle": 0,
+  }
+}

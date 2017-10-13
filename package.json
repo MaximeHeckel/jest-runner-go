@@ -1,0 +1,28 @@
+{
+  "name": "gotest-runner",
+  "version": "0.0.1",
+  "description": "A jest runner to run go tests",
+  "main": "build/index.js",
+  "author": "Maxime Heckel (@MaximeHeckel)",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src --ignore **/*.test.js,integration -d build",
+    "lint": "LIST=`git diff-index --name-only HEAD | grep -f *.js | grep -v json;`; if [ $LIST ]; then eslint $LIST; fi"
+  },
+  "dependencies": {
+    "eslint": "^4.9.0",
+    "throat": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "flow-bin": "^0.57.3"
+  }
+}
