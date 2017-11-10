@@ -35,7 +35,7 @@ class GoTestRunner {
 
         await onStart(test);
 
-        return this._runTest(test.path, test.context.config, test.context.resolver)
+        return this._runTest(test.path)
           .then((result) => {
             onResult(test, result);
           })
@@ -71,6 +71,10 @@ class GoTestRunner {
         }
 
         const report = parseGoOutput(relativeTestPath, start, result);
+        const end = +new Date();
+
+        report.end = end;
+        report.duration = end - start;
 
         resolve({
           console: null,

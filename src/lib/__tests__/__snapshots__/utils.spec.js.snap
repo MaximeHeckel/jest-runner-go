@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseGoOutput parses the golang test output accordingly 1`] = `
+Object {
+  "duration": 0,
+  "end": 0,
+  "failed": 0,
+  "failureMessage": "",
+  "name": "github.com/MaximeHeckel/go-test-runner/example/stringutil",
+  "passed": 1,
+}
+`;
+
+exports[`toTestResult returns a properly formatted test result 1`] = `
+Object {
+  "ancestorTitles": Array [],
+  "duration": 336,
+  "failureMessages": "",
+  "fullName": "github.com/MaximeHeckel/go-test-runner/example/stringutil2",
+  "numPassingAsserts": 1,
+  "status": "passed",
+  "title": "github.com/MaximeHeckel/go-test-runner/example/stringutil2",
+}
+`;

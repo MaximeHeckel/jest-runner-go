@@ -1,3 +1,8 @@
+export type Context = {
+  config: Object,
+  resolver: Function,
+};
+
 export type TestFile = {
   path: string,
   context: Context,

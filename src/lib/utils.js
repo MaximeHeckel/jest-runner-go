@@ -1,12 +1,14 @@
 // @flow
 
+/* eslint-disable no-plusplus */
 import {
   Test,
   TestResult,
-} from '../types'
+} from '../types';
 
+// eslint-disable-next-line max-len
 export const parseGoOutput = (relativeTestPath: string, start: number, output: Array<string>): Test => {
-  let report = {
+  const report = {
     passed: 0,
     failed: 0,
     failureMessage: '',
@@ -32,12 +34,7 @@ export const parseGoOutput = (relativeTestPath: string, start: number, output: A
     }
   });
 
-  const end = +new Date();
-
-  report.end = end;
-  report.duration = end - start;
-
-  return report 
+  return report;
 };
 
 export const toTestResult = (test: Test): TestResult => ({
