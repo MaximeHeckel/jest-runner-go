@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Works when it has passing tests 1`] = `
+"PASS integrationTests/fixtures/success/main_test.go
+  ✓ project/go-test-runner/integrationTests/fixtures/success
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Ran all test suites."
+`;

@@ -6,9 +6,9 @@
   "author": "Maxime Heckel (@MaximeHeckel)",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --ignore **/*.test.js,integration -d build",
+    "build": "babel src --ignore **/*.spec.js,integration -d build",
     "lint": "eslint .",
-    "watch": "babel src -w --ignore **/*.test.js,integration -d build",
+    "watch": "babel src -w --ignore **/*.spec.js,integration -d build",
     "test": "jest"
   },
   "dependencies": {
