@@ -16,7 +16,21 @@
 
 ### Install
 
-Coming soon to NPM
+Install `jest` version 21 or above and `jest-runner-go`:
+
+With `Yarn`
+
+```bash
+
+yarn add -D jest jest-runner-go
+```
+
+
+With `NPM`
+
+```bash
+npm install --save-dev jest jest-runner-go
+```
 
 ### Add it to your project
 
@@ -63,4 +77,11 @@ yarn jest
    ```bash
    docker run -it jest-runner-go sh -c "cd example && yarn test"
    ```
+
+If you want to test your development version of `jest-runner-go` on another project do the following:
+
+1. In the `jest-runner-go`folder run `yarn build && yarn link`
+2. In your other projects run `yarn link jest-runner-go`
+
+Your project will now use your local `jest-runner-go`.
 

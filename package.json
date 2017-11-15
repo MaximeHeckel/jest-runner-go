@@ -1,10 +1,16 @@
 {
-  "name": "gotest-runner",
-  "version": "0.0.1",
+  "name": "jest-runner-go",
+  "version": "0.1.0",
   "description": "A jest runner to run go tests",
   "main": "build/index.js",
   "author": "Maxime Heckel (@MaximeHeckel)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaximeHeckel/jest-runner-go.git"
+  },
+  "homepage": "https://github.com/MaximeHeckel/jest-runner-go",
+  "files": ["build/"],
   "scripts": {
     "build": "babel src --ignore **/*.spec.js,integration -d build",
     "lint": "eslint .",
