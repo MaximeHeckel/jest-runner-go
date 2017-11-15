@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t maximeheckel/jest-runner-go .
+
+script:
+  - docker run maximeheckel/jest-runner-go

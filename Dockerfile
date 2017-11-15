@@ -1,5 +1,4 @@
-ARG NODE_VERSION=8
-FROM node:${NODE_VERSION}-alpine
+FROM node:8-alpine
 
 RUN apk --no-cache add go git mercurial subversion ca-certificates musl-dev && \
 	mkdir -p /goroot /go/src /go/bin && \
