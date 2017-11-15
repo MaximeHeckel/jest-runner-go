@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MaximeHeckel/jest-runner-go.svg?branch=master)](https://travis-ci.org/MaximeHeckel/jest-runner-go) [![npm version](https://badge.fury.io/js/jest-runner-go.svg)](https://badge.fury.io/js/jest-runner-go)
+
 <div align="center">
   <img width="150" height="150" src="https://newrelic.com/assets/pages/golang/go-mascot.svg">
   <a href="https://facebook.github.io/jest/">
