@@ -49,7 +49,7 @@ Add the following to your `package.json`
 },
 ```
 
-Or to your `jest.config.json`
+Or to your `jest.config.js`
 ```js
 module.exports = {
   runner: 'jest-runner-go',
