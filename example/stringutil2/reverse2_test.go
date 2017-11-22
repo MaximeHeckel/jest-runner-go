@@ -31,7 +31,3 @@ func TestReverse2(t *testing.T) {
 		}
 	}
 }
-
-func TestReverse3(t *testing.T) {
-	t.Skip("Skipping ...")
-}

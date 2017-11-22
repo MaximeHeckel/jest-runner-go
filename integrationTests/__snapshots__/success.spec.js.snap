@@ -2,7 +2,7 @@
 
 exports[`Works when it has passing tests 1`] = `
 "PASS integrationTests/fixtures/success/main_test.go
-  ✓ project/go-test-runner/integrationTests/fixtures/success
+  ✓ /go/src/project/go-test-runner/integrationTests/fixtures/success/main_test.go
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total

@@ -19,16 +19,13 @@ export const parseGoOutput = (relativeTestPath: string, start: number, output: A
 
   output.forEach((line) => {
     if (line && line.indexOf('--- FAIL:') > -1) {
-      return;
+      report.failed++;
     }
 
     if (line && line.indexOf('.go:') > -1) {
       report.failureMessage = line;
     }
 
-    if (line && line.indexOf(`FAIL\t${relativeTestPath}`) > -1) {
-      report.failed++;
-    }
     if (line && line.indexOf('ok') > -1) {
       report.passed++;
     }
