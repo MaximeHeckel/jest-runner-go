@@ -2,7 +2,7 @@
 
 exports[`Works when it has failing tests 1`] = `
 "FAIL integrationTests/fixtures/failing/main_test.go
-  ✕ project/go-test-runner/integrationTests/fixtures/failing
+  ✕ /go/src/project/go-test-runner/integrationTests/fixtures/failing/main_test.go
 	main_test.go:9: Got 5 expected 6
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
