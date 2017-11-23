@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Works when it has failing tests 1`] = `
-"FAIL integrationTests/fixtures/failing/main_test.go
-  ✕ /go/src/project/go-test-runner/integrationTests/fixtures/failing/main_test.go
+"FAIL project/go-test-runner/integrationTests/fixtures/failing
+  ✕ project/go-test-runner/integrationTests/fixtures/failing
 	main_test.go:9: Got 5 expected 6
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
