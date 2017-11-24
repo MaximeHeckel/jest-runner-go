@@ -14,7 +14,7 @@ export const pathContainsFailedTest = (line: string, relativeTestPath: string) =
     line.match(new RegExp(matchTestFileName)).length > 0 &&
     line.match(new RegExp(matchTestFileName))[0];
   return relativeTestPath.indexOf(testFile) > -1;
-}
+};
 
 // eslint-disable-next-line max-len
 export const parseGoOutput = (relativeTestPath: string, start: number, output: Array<string>): Test => {
@@ -33,7 +33,7 @@ export const parseGoOutput = (relativeTestPath: string, start: number, output: A
       line.indexOf('.go:') > -1 &&
       pathContainsFailedTest(line, relativeTestPath)
     ) {
-      report.failed ++;
+      report.failed++;
       report.failureMessage = line;
     }
 

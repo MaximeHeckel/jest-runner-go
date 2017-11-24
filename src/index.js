@@ -47,7 +47,7 @@ class GoTestRunner {
     const start = +new Date();
 
     return new Promise((resolve, reject) => {
-      const child = spawn('go', ['test', `./...`]);
+      const child = spawn('go', ['test', './...']);
 
       let stdout = '';
       child.stdout.setEncoding('utf-8');

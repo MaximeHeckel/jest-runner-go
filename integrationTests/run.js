@@ -8,13 +8,13 @@ const normalize = output => {
     .replace(/, estimated/g, '')
     .replace(new RegExp('github.com', 'g'), 'mockedpath')
     .replace(/(mockedpath)\/([[A-Z])\w+/g, 'project')
-    .replace(/(\/Users)\/([[A-Za-z0-9\_])\w+/g, '')
-    .replace(new RegExp('Time:','g'), '')
+    .replace(/(\/Users)\/([[A-Za-z0-9_])\w+/g, '')
+    .replace(new RegExp('Time:', 'g'), '')
     .replace(new RegExp('.*at .*\\n', 'g'), 'mocked-stack-trace')
     .replace(/.*at .*\\n/g, 'mocked-stack-trace')
     .replace(/(mocked-stack-trace)+/, '      at mocked-stack-trace')
     .replace(/\s+\n/g, '\n');
-}
+};
 
 const run = (project, options = []) => {
   return execa(
@@ -30,7 +30,7 @@ const run = (project, options = []) => {
       env: process.env,
     },
   ).then(({ stderr }) => normalize(stderr))
-  .catch(({ stderr }) => normalize(stderr));
-}
+    .catch(({ stderr }) => normalize(stderr));
+};
 
 module.exports = run;
