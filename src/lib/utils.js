@@ -6,6 +6,16 @@ import {
   TestResult,
 } from '../types';
 
+const matchTestFileName = /([A-Za-z_])\w+(_test.go)/g;
+
+export const pathContainsFailedTest = (line: string, relativeTestPath: string) => {
+  // eslint-disable-next-line max-len
+  const testFile = line.match(new RegExp(matchTestFileName)) &&
+    line.match(new RegExp(matchTestFileName)).length > 0 &&
+    line.match(new RegExp(matchTestFileName))[0];
+  return relativeTestPath.indexOf(testFile) > -1;
+};
+
 // eslint-disable-next-line max-len
 export const parseGoOutput = (relativeTestPath: string, start: number, output: Array<string>): Test => {
   const report = {
@@ -18,11 +28,12 @@ export const parseGoOutput = (relativeTestPath: string, start: number, output: A
   };
 
   output.forEach((line) => {
-    if (line && line.indexOf('--- FAIL:') > -1) {
+    if (
+      line &&
+      line.indexOf('.go:') > -1 &&
+      pathContainsFailedTest(line, relativeTestPath)
+    ) {
       report.failed++;
-    }
-
-    if (line && line.indexOf('.go:') > -1) {
       report.failureMessage = line;
     }
 

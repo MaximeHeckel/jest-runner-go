@@ -10,12 +10,13 @@ ENV GOPATH=/go \
 
 WORKDIR /go/src/github.com/MaximeHeckel/go-test-runner/
 
-COPY package.json yarn.lock jest.config.js .flowconfig .babelrc ./
+COPY package.json yarn.lock .eslintrc .eslintignore jest.config.js .flowconfig .babelrc ./
 ADD src ./src
 ADD example ./example
 ADD integrationTests ./integrationTests
 
 RUN yarn --ignore-scripts && \
+	yarn lint && \
 	yarn build
 
 CMD ["yarn", "test"]

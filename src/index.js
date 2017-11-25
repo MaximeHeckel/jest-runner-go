@@ -44,24 +44,10 @@ class GoTestRunner {
   }
 
   async _runTest(testPath: string) {
-    if (!process.env.GOPATH) {
-      throw new Error('This runner can only run if a GOPATH environment variable is defined');
-    }
-
-    // Note MaximeHeckel 11/23/2017
-    // Current limitation: No support for multiple GOPATHs,
-    // if multiple GOPATHs are defined take the first one
-
-    // Workdir is $GOPATH/src, most of Golang setups require the go projects
-    // to be under /src
-    const workdir = process.env.GOPATH && `${process.env.GOPATH.split(':')[0]}/src/`;
-
-    // Remove the GOPATH in the testPath
-    const relativeTestPath = testPath.substring(0, testPath.lastIndexOf('/')).replace(workdir, '');
     const start = +new Date();
 
     return new Promise((resolve, reject) => {
-      const child = spawn('go', ['test', `${relativeTestPath}/...`]);
+      const child = spawn('go', ['test', './...']);
 
       let stdout = '';
       child.stdout.setEncoding('utf-8');
@@ -77,7 +63,7 @@ class GoTestRunner {
           reject(error);
         }
 
-        const report = parseGoOutput(relativeTestPath, start, result);
+        const report = parseGoOutput(testPath, start, result);
         const end = +new Date();
 
         report.end = end;
@@ -104,7 +90,7 @@ class GoTestRunner {
           },
           sourceMaps: {},
           testExecError: null,
-          testFilePath: relativeTestPath,
+          testFilePath: testPath,
           testResults: [toTestResult(report)],
         });
       });

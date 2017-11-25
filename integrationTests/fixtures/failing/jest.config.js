@@ -1,5 +1,5 @@
 module.exports = {
   runner: '../../../build',
-  moduleFileExtensions: ["go"],
+  moduleFileExtensions: ['go'],
   testMatch: ['**/?(*_)test.go'],
 };
