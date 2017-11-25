@@ -86,28 +86,3 @@ If you want to test your development version of `jest-runner-go` on another proj
 2. In your other projects run `yarn link jest-runner-go`
 
 Your project will now use your local `jest-runner-go`.
-
-
-### Known issues
-
-#### Duplicated test failure (minor)
-
-When a package contains multiple tests files, if one of them is failing, the error is reported multiple times, (as many times as their are test files in the package).
-This is due to a conflict between the way Jest and Go define what a failing test is and how they report it: for Jest it's per file, for Go per package.
-
-```bash
-
-$ jest
- PASS  github.com/MaximeHeckel/go-test-runner/example/stringutil
- FAIL  github.com/MaximeHeckel/go-test-runner/example/stringutil2
-  reverse3_test.go:15: Got dlro ,olleH expected dlrow ,olleH
- FAIL  github.com/MaximeHeckel/go-test-runner/example/stringutil2
-  reverse3_test.go:15: Got dlro ,olleH expected dlrow ,olleH
-Test Suites: 2 failed, 1 passed, 3 total
-Tests:       2 failed, 1 passed, 3 total
-Snapshots:   0 total
-Time:        0.5s, estimated 1s
-Ran all test suites.
-error Command failed with exit code 1.
-```
-
